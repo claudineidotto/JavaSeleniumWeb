@@ -22,7 +22,7 @@ public class MainTests extends TestBase {
     }
 
     @Test
-    public void PreencherForm() {
+    public void PreencherFormValido() {
         String name="Jorge";
 
         elementsPage = new ElementsPage();
@@ -32,6 +32,18 @@ public class MainTests extends TestBase {
         elementsPage.PreencherForm(name,"jorge@gmail.com","Rua Pirapora","Rua Piripimpa");
 
         Assertions.assertEquals("Name:"+name,elementsPage.ValidarOutput());
+    }
+
+    @Test
+    public void PreencherFormEmailInvalidoSemNome() {
+        String name="Jorge";
+
+        elementsPage = new ElementsPage();
+        elementsPage.AcessarElementsPage();
+        elementsPage.ValidarElementPage();
+        elementsPage.AcessarTextBox();
+        elementsPage.PreencherForm(name,"EmailErrado","Rua Pirapora","Rua Piripimpa");
+        Assertions.assertTrue(elementsPage.ValidarOutputError());
     }
 
 }

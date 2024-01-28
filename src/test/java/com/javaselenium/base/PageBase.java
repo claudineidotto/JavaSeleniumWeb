@@ -49,7 +49,10 @@ public class PageBase {
       //  ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
         return text;
     }
-
+    protected String getClassValue(By locator){
+        String classValue = waitForElement(locator).getTagName().getClass().toString();        //  ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
+        return classValue;
+    }
     protected void  click (By locator){
         waitForElement(locator).click();
     }
