@@ -46,6 +46,26 @@ public class MainTests extends TestBase {
         Assertions.assertTrue(elementsPage.ValidarOutputError());
     }
 
+    @Test
+    public void SelectCheckBoxNotes (){
+        String item ="Notes";
+        elementsPage = new ElementsPage();
+        elementsPage.AcessarElementsPage();
+        elementsPage.AcessarCheckBox();
+        elementsPage.ExpandAllCheckBox();
+        elementsPage.SelecionarCheckBoxNotes();
+        Assertions.assertEquals("You have selected : notes","You have selected : "+elementsPage.SelectedName());
+    }
+    @Test
+    public void SelectCheckBoxCommands (){
+        String item ="Commands";
+        elementsPage = new ElementsPage();
+        elementsPage.AcessarElementsPage();
+        elementsPage.AcessarCheckBox();
+        elementsPage.ExpandAllCheckBox();
+        elementsPage.SelecionarCheckBoxCommands();
+        Assertions.assertEquals("You have selected : commands","You have selected : "+elementsPage.SelectedName());
+    }
 }
 
 

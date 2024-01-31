@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 public class ElementsPage extends PageBase {
     By cssButton = By.cssSelector("path");
     By textBoxButton = By.id("item-0");
+    By checkBoxButton = By.id("item-1");
     By textBoxName = By.id("userName");
     By textBoxEmail = By.id("userEmail");
     By textBoxAddress = By.id("currentAddress");
@@ -14,7 +15,12 @@ public class ElementsPage extends PageBase {
     By submitButton = By.id("submit");
     By textOutputName = By.id("name");
     By errorSignTextBox= By.xpath("//div[@id=\"userEmail-wrapper\"]//input[@class=\"mr-sm-2 field-error form-control\"]");
-     public void AcessarElementsPage(){
+    By buttonExpandAllCheckBox =By.xpath("//div[@id=\"tree-node\"]//button[@title=\"Expand all\"]");
+    By textResultname= By.xpath("//div[@id=\"result\"]//span[@class=\"text-success\"]");
+    By elementListNotes =By.xpath("//label[@for=\"tree-node-notes\"]");
+    By elementListCommands =By.xpath("//label[@for=\"tree-node-commands\"]");
+
+    public void AcessarElementsPage(){
       click(cssButton);
     }
     public void ValidarElementPage(){
@@ -38,5 +44,19 @@ public class ElementsPage extends PageBase {
         return getText(textOutputName);
     }
 
-
+    public void AcessarCheckBox(){
+        click(checkBoxButton);
+    }
+    public void ExpandAllCheckBox(){
+        click(buttonExpandAllCheckBox);
+    }
+    public String SelectedName(){
+        return getText(textResultname);
+    }
+    public void SelecionarCheckBoxNotes (){
+        click(elementListNotes);
+    }
+    public void SelecionarCheckBoxCommands (){
+        click(elementListCommands);
+    }
 }
