@@ -1,2 +1,2 @@
 # javaSeleniumWeb
-Pipe created to study/improve automation practcise 
+Pipe created to study/improve automation practice 
